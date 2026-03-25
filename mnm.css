@@ -1,0 +1,403 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ff4ecd, #ffb347, #4facfe);
+}
+
+/* ================= OVERLAY & CARD ================= */
+
+.main-logo {
+  display: block;
+  margin: 0 auto 10px;
+  width: 200px; /* Increased size for impact */
+  height: auto;
+}
+.overlay {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.overlay {
+  /* ... keep your existing styles ... */
+  padding-bottom: 80px; /* Adds space at the bottom for the scroll indicator */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ================= HEADINGS ================= */
+
+  .name {
+  font-size: 1.7rem; 
+  margin-bottom: 5px;
+  text-align: center;
+  color: #ffb347;
+}
+
+  .songtitle {
+  font-size: 1.6rem;    /* Adjusted size */
+  white-space: nowrap;  /* Forces it to stay on one line */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 0;
+ text-align: center;
+  color: #ff4ecd;
+}
+
+.sub {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ================= FORM ================= */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #ff4ecd, #ff7a18);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+/* ================= SOCIAL BUTTONS ================= */
+
+.socials {
+  margin-top: 18px;
+}
+
+.social-btn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 12px; 
+  animation: bounce 1.4s infinite;
+}
+.social-btn:last-child {
+  margin-bottom: 0;
+}
+
+.social-btn.insta {
+  background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
+}
+
+.social-btn.yt {
+   background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ================= SUCCESS SCREEN ================= */
+
+.success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 28px;
+  border-radius: 24px;
+  max-width: 420px;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.success.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #ff4ecd;
+}
+
+.success p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.success .socials {
+  width: 100%;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 22px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: #222;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  animation: fall linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ================= SCROLL INDICATOR ================= */
+
+.scroll-down {
+  margin-top: 20px;       /* Pushes it away from the card above */
+  margin-bottom: 40px;    /* Adds space before the very bottom of the page */
+  text-align: center;
+  color: #ffffff;         /* Or your preferred brand color */
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: bounce 2s infinite; /* Optional: adds a little movement */
+}
+
+.scroll-down .arrow {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+/* Optional: Bouncing animation for visibility */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+.scroll-down.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes float {
+  50% { transform: translateY(6px); }
+}
+
+/* ================= ABOUT SECTION ================= */
+
+.about-section {
+  padding: 80px 20px 120px;
+}
+
+.about-card {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+.about-card h2 {
+  color: #ff4ecd;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.contact-box {
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+
+.contact-box h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #444; /* Darker grey for the label */
+}
+
+.btn-copy {
+  background: transparent;
+  border: 1.5px solid #ff4bb4; /* Matching your theme pink */
+  color: #ff4bb4;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-copy:hover {
+  background: #ff4bb4;
+  color: white;
+}
+
+/* Success State */
+.btn-copy.copied {
+  background: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+
+/* ================= OCCASION POPUP ================= */
+
+.hidden {
+  display: none;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.radio-group input {
+  margin-right: 6px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  cursor: pointer;
+  margin-bottom: 5px; 
+}
+
+
+.radio-group input[type="radio"] {
+  width: auto; 
+  margin: 0;
+}
+
+#occasionOverlay .disclaimer {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* --- LOADING OVERLAY --- */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px); /* Blurs the background */
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000; /* Stays on top of everything */
+  transition: opacity 0.3s ease;
+}
+
+.loader-content {
+  text-align: center;
+  color: #ff4bb4;
+  font-weight: 600;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 75, 180, 0.2);
+  border-top: 5px solid #ff4bb4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none !important;
+  opacity: 0;
+}
